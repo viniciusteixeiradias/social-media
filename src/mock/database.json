@@ -1,0 +1,69 @@
+{
+  "User": [
+    {
+      "id": "1",
+      "uuid": "a6e7d2c5-1f3d-45a8-8f91-3c74d56a5a8e",
+      "name": "John Doe",
+      "tag_name": "johndoe",
+      "email": "john@example.com",
+      "password_hash": "hashed_password_1",
+      "created_at": "2023-09-28T10:00:00Z"
+    },
+    {
+      "id": "2",
+      "uuid": "b51c087b-731a-4d0f-849b-2e75e7a5d1c5",
+      "name": "Jane Smith",
+      "tag_name": "janesmith",
+      "email": "jane@example.com",
+      "password_hash": "hashed_password_2",
+      "created_at": "2023-09-28T11:30:00Z"
+    }
+  ],
+  "Post": [
+    {
+      "id": "1",
+      "uuid": "f2e6a1b8-9c35-4f16-81b8-3c38b71e9174",
+      "content": "This is the first post by John Doe.",
+      "created_at": "2023-09-28T12:15:00Z",
+      "author_uuid": "a6e7d2c5-1f3d-45a8-8f91-3c74d56a5a8e"
+    },
+    {
+      "id": "2",
+      "uuid": "d84179e1-1bb9-47d9-b8d3-0a62e8efcd91",
+      "content": "Jane Smith's first post.",
+      "created_at": "2023-09-28T13:45:00Z",
+      "author_uuid": "b51c087b-731a-4d0f-849b-2e75e7a5d1c5"
+    }
+  ],
+  "UserPostInteraction": [
+    {
+      "id": "1",
+      "user_uuid": "a6e7d2c5-1f3d-45a8-8f91-3c74d56a5a8e",
+      "post_uuid": "f2e6a1b8-9c35-4f16-81b8-3c38b71e9174",
+      "interaction_type": "like",
+      "interaction_date": "2023-09-28T14:30:00Z"
+    },
+    {
+      "id": "2",
+      "user_uuid": "b51c087b-731a-4d0f-849b-2e75e7a5d1c5",
+      "post_uuid": "f2e6a1b8-9c35-4f16-81b8-3c38b71e9174",
+      "interaction_type": "comment",
+      "interaction_date": "2023-09-28T14:45:00Z"
+    },
+    {
+      "id": "3",
+      "user_uuid": "a6e7d2c5-1f3d-45a8-8f91-3c74d56a5a8e",
+      "post_uuid": "d84179e1-1bb9-47d9-b8d3-0a62e8efcd91",
+      "interaction_type": "dislike",
+      "interaction_date": "2023-09-28T15:00:00Z"
+    }
+  ],
+  "Follow": [
+    {
+      "id": "1",
+      "follower_uuid": "a6e7d2c5-1f3d-45a8-8f91-3c74d56a5a8e",
+      "following_uuid": "b51c087b-731a-4d0f-849b-2e75e7a5d1c5",
+      "follow_date": "2023-09-28T15:30:00Z"
+    }
+  ]
+}

@@ -6,7 +6,8 @@ module.exports = {
   extends: [
     'eslint:recommended',
     'plugin:@typescript-eslint/recommended',
-    'plugin:vue/vue3-essential'
+    'plugin:vue/vue3-essential',
+    'plugin:vue/vue3-recommended'
   ],
   overrides: [
     {
@@ -29,6 +30,8 @@ module.exports = {
     indent: ['error', 2],
     'linebreak-style': ['error', 'unix'],
     quotes: ['error', 'single'],
-    semi: ['error', 'always']
+    semi: ['error', 'always'],
+    'vue/block-tag-newline': ['error'],
+    'vue/max-attributes-per-line': ['error'],
   }
 };
