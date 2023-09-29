@@ -1,14 +1,26 @@
+<script lang="ts" setup>
+import { ref } from 'vue';
+
+const postContent = ref<string>('');
+
+const onClick = (): void => alert(postContent.value);
+</script>
+
 <template>
   <div class="input-card">
     <div class="input-card__avatar" />
 
     <textarea
+      v-model="postContent"
       rows="2"
       class="input-card__input"
       placeholder="Share your stoke 🏄‍♂️ !"
     />
 
-    <button class="input-card__button">
+    <button
+      class="input-card__button"
+      @click="onClick"
+    >
       Post >
     </button>
   </div>

@@ -21,14 +21,11 @@
     "noFallthroughCasesInSwitch": true,
 
     /* Vinicius */
+    "allowSyntheticDefaultImports": true,
     "baseUrl": ".",
     "paths": {
       "@/*": ["./src/*"]
-    },
-    "include": [
-      "src", 
-      "src/**/*.vue"
-    ],
+    }
   },
   "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx", "src/**/*.vue"],
   "references": [{ "path": "./tsconfig.node.json" }]

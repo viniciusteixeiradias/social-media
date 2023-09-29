@@ -1,8 +1,12 @@
 <script lang="ts" setup>
 import InputCard from '@/components/InputCard.vue';
 import PostCard from '@/components/PostCard.vue';
+import { db } from '@/mock/database';
 
-const numCards = 20;
+const getAuthorTagName = (authorUuid: string) => {
+  const author = db.User.find(({ uuid }) => uuid === authorUuid)!;
+  return author.tag_name;
+};
 </script>
 
 <template>
@@ -14,8 +18,11 @@ const numCards = 20;
         <InputCard />
 
         <PostCard
-          v-for="card in numCards"
-          :key="card"
+          v-for="post in db.Post"
+          :key="post.uuid"
+          :tag-name="getAuthorTagName(post.author_uuid)"
+          :date="post.created_at"
+          :content="post.content"
         />
       </div>
     </div>
@@ -46,4 +53,4 @@ header {
     padding-top: 30px;
   }
 }
-</style>
+</style>@/mock/database
