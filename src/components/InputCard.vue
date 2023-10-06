@@ -3,7 +3,10 @@ import { ref } from 'vue';
 
 const postContent = ref<string>('');
 
-const onClick = (): void => alert(postContent.value);
+const onClick = (): void => {
+  alert(postContent.value);
+  postContent.value = '';
+};
 </script>
 
 <template>
@@ -12,6 +15,7 @@ const onClick = (): void => alert(postContent.value);
 
     <textarea
       v-model="postContent"
+      autofocus
       rows="2"
       class="input-card__input"
       placeholder="Share your stoke 🏄‍♂️ !"

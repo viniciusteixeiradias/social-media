@@ -24,6 +24,7 @@ const props = defineProps<{
       <button>Like</button>
       <button>Dislike</button>
       <button>Comments</button>
+      <button>Report</button>
       <!-- TODO: <button>More</button> -->
     </div>
   </div>

@@ -2,8 +2,19 @@
 import InputCard from '@/components/InputCard.vue';
 import PostCard from '@/components/PostCard.vue';
 import { db } from '@/mock/database';
+import { useRouter } from 'vue-router';
 
-const getAuthorTagName = (authorUuid: string) => {
+const router = useRouter();
+
+const onSignIn = (): void => {
+  router.push({ name: 'sign-in' });
+};
+
+const onSignUp = (): void => {
+  router.push({ name: 'sign-up' });
+};
+
+const getAuthorTagName = (authorUuid: string): string => {
   const author = db.User.find(({ uuid }) => uuid === authorUuid)!;
   return author.tag_name;
 };
@@ -11,7 +22,18 @@ const getAuthorTagName = (authorUuid: string) => {
 
 <template>
   <div>
-    <header />
+    <header class="header">
+      <div class="header__content">
+        <div class="header__content--actions">
+          <button @click="onSignIn">
+            Sign in
+          </button>
+          <button @click="onSignUp">
+            Sign up
+          </button>
+        </div>
+      </div>
+    </header>
 
     <div class="wrapper">
       <div class="wrapper__content">
@@ -30,16 +52,26 @@ const getAuthorTagName = (authorUuid: string) => {
 </template>
 
 <style lang="scss" scoped>
-header {
-  top: 0;
-  position: fixed;
+.header {
   height: 60px;
   width: 100vw;
   background-color: white;
+
+  &__content {
+    display: flex;
+    padding: 1rem;
+    align-items: center;
+    justify-content: flex-end;
+    overflow-x: auto;
+
+    &--actions {
+      display: flex;
+      gap: 1rem;
+    }
+  }
 }
 
 .wrapper {
-  margin-top: 60px;
   height: calc(100vh - 60px);
   width: 100vw;
   display: flex;
